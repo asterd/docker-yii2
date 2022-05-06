@@ -6,7 +6,7 @@ ENV TIMEZONE Europe/Rome
 
 RUN apk upgrade --update && apk --no-cache add \
     autoconf tzdata file g++ gcc binutils isl libatomic libc-dev musl-dev make re2c libstdc++ libgcc oniguruma-dev libzip-dev libcurl curl-dev build-base mpc1 mpfr4 gmp libgomp coreutils freetype-dev libjpeg-turbo-dev libltdl libmcrypt-dev libpng-dev openssl-dev libxml2-dev expat-dev \
-    && docker-php-ext-install -j$(nproc) iconv mysqli pdo pdo_mysql php_pdo_mysql curl bcmath mbstring json xml zip opcache
+    && docker-php-ext-install -j$(nproc) iconv mysqli pdo pdo_mysql curl bcmath mbstring json xml zip opcache
 
 RUN pecl install mcrypt-1.0.4 \
     && docker-php-ext-enable mcrypt;

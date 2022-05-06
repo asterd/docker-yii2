@@ -13,6 +13,8 @@ services:
         - MYSQL_USER=root
         - MYSQL_PASSWORD=pmcbasic
       command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+      ports:
+        - "3306:3306"
 
   php:
       build: ./php
@@ -44,5 +46,7 @@ services:
     image: phpmyadmin/phpmyadmin
     container_name: yii_phpmyadmin
     restart: always
+    environment:
+      UPLOAD_LIMIT: 80M
     ports:
       - "8000:80"
