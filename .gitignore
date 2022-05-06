@@ -32,3 +32,5 @@ man/man5
 man/man8
 vendor/pkg/
 www/*
+.idea/*
+
